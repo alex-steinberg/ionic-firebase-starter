@@ -8,17 +8,17 @@ Firebase project is required).
 ## The Stack
 
 Ionic + Angular + Firebase is a mobile stack that offers unparalleled ease-of-use and power.
-When considering a mobile app stack, this has to be the starting point. The technologies have
+When considering a mobile app stack, this has to be the starting point of deliberations. The technologies have
 in common wide use as a mobile stack, crystal clear and example-rich documentation, years of
-history with commensurate stability, 3rd party libraries, Stack Overflow posts and active communities.
+history with commensurate stability, 3rd-party libraries, Stack Overflow posts and active communities.
 
 ## Good, Simple Practices
 
-I endeavour to bake in best practices for Angular development suited to small-scale apps, bearing 
-in mind the reality that small prototypes can quickly become large applications (see what I did there?) 
-so best practices need to be followed from the start. NgRx is not used because it is not suitable 
-to rapid prototyping, but I've taken a lot of inspiration from functional paradigms in how state is managed
-in the services, hopefully achieving the best of both worlds.
+While building the [PayProp Owner App](https://apps.apple.com/za/app/payprop/id1228082863) over the last two years as a one-man mobile dev team, I have constantly sought patterns and practices that would set the team up for success when growth happens, all the while maintaining a high pace of development and delivery to meet business objectives. The result is, hopefully, a set of Angular development patterns that is performant, maintainable and safe.
+
+The state management pattern is inspired by Thomas Burleson's "Facades" talk at [ngConf 2019](https://www.youtube.com/watch?v=h-F5uYM69a4).
+
+Functional programming paradigms such as immutability and pure functions are used wherever possible.
 
 ## Get Started
 
@@ -37,13 +37,13 @@ It looks like this:
 
 ```javascript
     var firebaseConfig = {
-        apiKey: "AIzaSyDUq_PHcnzDdry2evIhnaB0bVuVgWLvRUI",
+        apiKey: "AIzaSyDUq_PHcnzDdry2evIhna5K7VuVgWLvRUI",
         authDomain: "<project-name>.firebaseapp.com",
         databaseURL: "https://<project-name>.firebaseio.com",
         projectId: "<project-name>",
         storageBucket: "",
         messagingSenderId: "968233898865",
-        appId: "1:968233898865:web:dc2f04a07b086bac"
+        appId: "1:968233898865:web:dc2f0a45kb086bac"
     };
 ```
 
