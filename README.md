@@ -12,6 +12,8 @@ When considering a mobile app stack, this has to be the starting point of delibe
 in common wide use as a mobile stack, crystal clear and example-rich documentation, years of
 history with commensurate stability, 3rd-party libraries, Stack Overflow posts and active communities.
 
+Cypress replaces Protractor/Selenium as the end-to-end testing framework.
+
 ## Good, Simple Practices
 
 While building the [PayProp Owner App](https://apps.apple.com/za/app/payprop/id1228082863) over the last two years as a one-man mobile dev team, I have constantly sought patterns and practices that would set the team up for success when growth happens, all the while maintaining a high pace of development and delivery to meet business objectives. The result is, hopefully, a set of Angular development patterns that is performant, maintainable and safe.
@@ -56,11 +58,23 @@ Install dependencies and then run the dev server.
 
     npm install
     
-    ionic serve
-    
 Go to http://localhost:8100 that was opened in your default browser.
 
 Start building your new unicorn app -- but remember, business become unicorns, not apps!
+
+# Usage
+
+To run the dev server:
+
+    ionic serve
+
+To run end-to-end tests with Cypress (with the dev server running)
+
+    npm run cypress:run
+
+or
+
+    npm run cypress:open
 
 # Resources
 
