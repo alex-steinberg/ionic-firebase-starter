@@ -1,0 +1,21 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Login</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">E-mail</ion-label>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-card-content>
+        <ion-button expand="block" (click)="submit(email, password)">Submit</ion-button>
+        <ion-button expand="block" fill="outline" [routerLink]="'/register'">Register</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
