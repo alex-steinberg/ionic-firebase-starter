@@ -5,7 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-
+    apiKey: 'AIzaSyDUq_PHcnzDdry2evIhnaB0bVuVgWLvRUI',
+    authDomain: 'sars-trip-logger.firebaseapp.com',
+    databaseURL: 'https://sars-trip-logger.firebaseio.com',
+    projectId: 'sars-trip-logger',
+    storageBucket: '',
+    messagingSenderId: '968233898865',
+    appId: '1:968233898865:web:dc2f04a07b086bac'
   }
 };
 
