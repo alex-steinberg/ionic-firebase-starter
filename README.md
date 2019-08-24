@@ -1,4 +1,4 @@
-# Ionic 4 Angular app with Firebase back-end starter
+# Ionic 4 Angular with Firebase back-end starter app
 
 A starter project which will form the base of most of my app prototypes. It 
 was seeded from the Ionic [sidemenu starter app](https://github.com/ionic-team/starters/tree/master/ionic-angular/official/sidemenu)
