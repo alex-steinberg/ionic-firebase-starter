@@ -9,7 +9,7 @@ interface AuthState {
   isLoggedIn: boolean;
 }
 
-const _state: AuthState = {
+let _state: AuthState = {
   isLoggedIn: false,
 };
 
@@ -32,7 +32,7 @@ export class AuthService implements OnDestroy {
   ) {
     this.afAuth.authState.pipe(map(result => {
       if (result !== null) {
-        this.store.next({..._state, isLoggedIn: true});
+        this.updateLoggedInState(true);
       }
     })).subscribe();
   }
@@ -41,7 +41,7 @@ export class AuthService implements OnDestroy {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(response => {
         if (response !== null) {
-          this.store.next({..._state, isLoggedIn: true});
+          this.updateLoggedInState(true);
         }
       });
   }
@@ -50,7 +50,7 @@ export class AuthService implements OnDestroy {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then(response => {
         if (response !== null) {
-          this.store.next({..._state, isLoggedIn: true});
+          this.updateLoggedInState(true);
         }
       })
       .catch(
@@ -61,10 +61,15 @@ export class AuthService implements OnDestroy {
   logUserOut(): Promise<any> {
     return this.afAuth.auth.signOut()
       .then(response => {
-        this.store.next({..._state, isLoggedIn: false});
+        this.updateLoggedInState(false);
         this.router.navigate(['/login']);
         this.uiService.showToast({message: 'You have been logged out'});
       });
+  }
+
+  private updateLoggedInState(isLoggedIn: boolean) {
+    _state = { ..._state, isLoggedIn };
+    this.store.next(_state);
   }
 
   ngOnDestroy(): void {
