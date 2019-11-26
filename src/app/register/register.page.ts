@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { AuthService } from '../shared/auth/auth.service';
@@ -9,24 +8,21 @@ import { AuthService } from '../shared/auth/auth.service';
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage {
 
+  name = '';
   email = '';
   password = '';
 
   constructor(
-      public afAuth: AngularFireAuth,
       private router: Router,
       private toastCtrl: ToastController,
       private authService: AuthService,
   ) { }
 
-  ngOnInit() {
-  }
-
-  submit(email: string, password: string): void {
+  submit(name: string, email: string, password: string): void {
     this.authService.createUser(
-        email, password
+        name, email, password
     ).then(
         () => {
           this.router.navigate(['/home']);

@@ -52,6 +52,22 @@ It looks like this:
 In your app project, go to `src/environments/environments.ts` and replace the empty object with
 the `firebaseConfig` object from your new Firebase project.
 
+#### Firestore Database
+
+Create the database using Locked/Production mode and use these rules:
+   
+    rules_version = '2';
+    service cloud.firestore {
+        match /databases/{database}/documents {
+            match /users/{userId} {
+                allow read, create: if request.auth != null;
+                allow update: if request.auth != null
+                            && request.resource.data.userId == request.auth.uid;
+                allow delete: if false;
+            }
+        }
+    }
+
 ### Ionic
 
 Install dependencies and then run the dev server.
