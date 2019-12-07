@@ -52,6 +52,10 @@ It looks like this:
 In your app project, go to `src/environments/environments.ts` and replace the empty object with
 the `firebaseConfig` object from your new Firebase project.
 
+#### Authentication
+
+After creating the Firebase project, from the Firebase console go to Develop > Authentication and click 'Set up sign-in method' and enable 'Email/Password'.
+
 #### Firestore Database
 
 Create the database using Locked/Production mode and use these rules:
